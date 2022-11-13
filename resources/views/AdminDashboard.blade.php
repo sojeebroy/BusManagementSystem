@@ -9,7 +9,7 @@ AdminDashboard
 <div class="content">
     <br><br><br>
     <h2>Dashboard</h2>
-    <p>Sojeeb Roy Partho</p>
+    <p>{{session()->get('email')}}</p>
 
 
     <div class="w3-row-padding w3-margin-bottom">

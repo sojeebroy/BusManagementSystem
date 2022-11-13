@@ -24,7 +24,7 @@
           <a class="nav-link" href="javascript:void(0)">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="user/registration">Registration</a>
+          <a class="nav-link" href="/driverregistration">Registration</a>
         </li>
       </ul>
       <ul class="navbar-nav me-auto">
