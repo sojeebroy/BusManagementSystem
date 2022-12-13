@@ -167,7 +167,7 @@
         </div>
         <div class="inputfield">
           <p>Dont have an account?</p>
-          <a href="/driverregistration">SignUp</a>
+          <a href="/userregistration">SignUp</a>
         </div>
       </div>
     </form>

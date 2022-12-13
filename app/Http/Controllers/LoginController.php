@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Driver;
 use App\Models\Admin;
+use App\Models\User;
+
 use App\Http\Controllers\DriverController;
 
 class LoginController extends Controller
@@ -13,8 +15,12 @@ class LoginController extends Controller
 
         $drivertable = new Driver();
         $admintable = new Admin();
+        $usertable = new User();
+
         $driverresult=$drivertable->where('email',$request->email)->where('password',$request->password)->first();
         $adminresult=$admintable->where('email',$request->email)->where('password',$request->password)->first();
+        $userresult=$usertable->where('email',$request->email)->where('password',$request->password)->first();
+
 
             if(!empty($driverresult)){
 
@@ -24,7 +30,13 @@ class LoginController extends Controller
             }elseif(!empty($adminresult)){
                 session()->put("email",$request->email);
                 return view('AdminDashboard');
-                
+
+            }
+            elseif(!empty($userresult)){
+                session()->put("email",$request->email);
+                return redirect()->route('userprofile', [$userresult->id]);
+
+
             }else{
                 $output="wrong credentials";
                 return $output;
@@ -39,4 +51,9 @@ class LoginController extends Controller
             return redirect("driverprofile");
         }
     }
+    function logout(Request $request){
+        session()->forget('email');
+         return redirect('home');
+
+     }
 }

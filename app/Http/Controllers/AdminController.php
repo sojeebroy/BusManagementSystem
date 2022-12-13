@@ -37,14 +37,11 @@ class AdminController extends Controller
 
     }
 
-    // public function profile()
-    // {
-    //     $admins = Admin::all();
-    //     return view('adminprofile',compact('admins'));
-    // }
-    public function profile($id)
+    public function profile($email)
     {
-        $admins = Admin::find($id);
+        // $admins = Admin::find($email);
+        $admintable = new Admin();
+        $admins=$admintable->where('email',$email)->first();
         return view('/adminprofile',compact('admins'));
     }
     public function EditProfile($id)
@@ -71,8 +68,13 @@ class AdminController extends Controller
         $admins ->nid = $request->input('nid');
         $admins ->address = $request->input('address');
         $admins ->update();
-        return redirect('/adminprofile/'.$id)->with('status',"Profile updated successfully..!!");
+        return redirect('/adminprofile/'.$admins ->email)->with('status',"Profile updated successfully..!!");
 
+    }
+
+    public function dashboard()
+    {
+        return view('admindashboard');
     }
 
 }

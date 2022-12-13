@@ -11,20 +11,20 @@
 
 <nav class=" navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="home">Bus Management System</a>
+    <a class="navbar-brand" href="/home">Bus Management System</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="home">Home</a>
+          <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/driverregistration">Registration</a>
+          <a class="nav-link" href="/userregistration">Registration</a>
         </li>
       </ul>
       <ul class="navbar-nav me-auto">

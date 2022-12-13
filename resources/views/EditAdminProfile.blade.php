@@ -160,7 +160,7 @@ EditAdminProfile
                   <div class="row">
                     <div class="col-sm-12">
                     <button type="submit" class="btn btn-primary btn-lg">Update</button>
-                    <a class="btn btn-primary btn-lg " href="/adminprofile/{ $admins->id}">Back</a>
+                    <a class="btn btn-primary btn-lg " href="/admindashboard">Back</a>
                     </div>
                   </div>
                 </div>

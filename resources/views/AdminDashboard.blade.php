@@ -19,7 +19,7 @@ AdminDashboard
         <div class="w3-right">
         </div>
         <div class="w3-clear"></div>
-        <h4>All Drivers</h4>
+        <h4><a href="/alldrivers">All Drivers</a></h4>
         </div>
         </div>
 
@@ -29,7 +29,7 @@ AdminDashboard
         <div class="w3-right">
         </div>
         <div class="w3-clear"></div>
-        <h4>All Users</h4>
+        <h4><a href="/allusers">All Users</a></h4>
       </div>
     </div>
     <div class="w3-quarter">
@@ -38,7 +38,7 @@ AdminDashboard
         <div class="w3-right">
         </div>
         <div class="w3-clear"></div>
-        <h4>All Buses</h4>
+        <h4><a href="/allbuses">All Buses</a></h4>
       </div>
     </div>
     <div class="w3-quarter">
@@ -47,7 +47,7 @@ AdminDashboard
         <div class="w3-right">
         </div>
         <div class="w3-clear"></div>
-        <h4>Users</h4>
+        <h4><a href="/userregistration">create user</a></h4>
       </div>
     </div>
 

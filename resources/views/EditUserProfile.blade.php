@@ -1,6 +1,6 @@
 @extends('layouts.app3')
 @section('header')
-EditAdminProfile
+EditUserProfile
 @endsection
 @section('content')
 
@@ -63,7 +63,7 @@ EditAdminProfile
 <div class="content">
     <div class="container">
     <div class="main-body">
-    <form action="/driverprofile/{{ $driver->id }}" method="POST">
+    <form action="/allusers/{{$users->id}}" method="POST">
             @csrf
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
@@ -75,7 +75,7 @@ EditAdminProfile
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                     <hr>
-                    <h2>{{ $driver->name }}</h2>
+                    <h2>{{ $users->name }}</h2>
                     </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@ EditAdminProfile
                       </span>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <input type="text" id="form3Example1c" name="name" class="form-control" value="{{ $driver->name }}"/>
+                    <input type="text" id="form3Example1c" name="name" class="form-control" value="{{ $users->name }}"/>
                     </div>
                   </div>
                   <hr>
@@ -111,7 +111,7 @@ EditAdminProfile
                       </span>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <input type="text" id="form3Example1c" name="email" class="form-control" value="{{ $driver->email }}"/>
+                    <input type="text" id="form3Example1c" name="email" class="form-control" value="{{ $users->email }}"/>
                     </div>
                   </div>
                   <hr>
@@ -125,42 +125,15 @@ EditAdminProfile
                       </span>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <input type="text" id="form3Example1c" name="phone" class="form-control" value="{{ $driver->phone }}"/>
+                    <input type="text" id="form3Example1c" name="phone" class="form-control" value="{{ $users->phone }}"/>
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">NID</h6>
-                      <span class="text-danger">
-                        @error('nid')
-                            {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <input type="text" id="form3Example1c" name="nid" class="form-control" value="{{ $driver->nid }}"/>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
-                      <span class="text-danger">
-                        @error('address')
-                            {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <input type="text" id="form3Example1c" name="address" class="form-control" value="{{ $driver->address }}"/>
-                    </div>
-                  </div>
-                  <hr>
+
                   <div class="row">
                     <div class="col-sm-12">
                     <button type="submit" class="btn btn-primary btn-lg">Update</button>
-                    <a class="btn btn-primary btn-lg " href="/driverprofile/{{$driver->id}}">Back</a>
+                    <a class="btn btn-primary btn-lg " href="/allusers">Back</a>
                     </div>
                   </div>
                 </div>

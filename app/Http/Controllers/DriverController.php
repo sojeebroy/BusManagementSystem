@@ -13,6 +13,16 @@ class DriverController extends Controller
 
     public function registration(Request $request)
     {
+        $request-> validate(
+            [
+                'name' =>'required',
+                'email' => "required|email",
+                'password'=>"required|min:6",
+                'phone' => 'required|numeric',
+                'address' => 'required',
+                'nid' => 'required'
+            ]
+        );
         $driver = new Driver();
         $driver ->name = $request->input('name');
         $driver ->email = $request->input('email');
@@ -30,6 +40,18 @@ class DriverController extends Controller
         $driver = Driver::find($id);
 
         return view('/driverprofile',compact('driver'));
+
+    }
+    public function AllDrivers()
+    {
+        $drivers =Driver::all();
+        return view('alldrivers',compact('drivers'));
+    }
+    public function Delete($id)
+    {
+        $drivers = Driver::find($id);
+        $drivers -> delete();
+        return redirect('/alldrivers')->with('status',"Driver deleted successfully");
     }
 
     public function EditProfile($id)

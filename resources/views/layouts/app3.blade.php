@@ -85,16 +85,7 @@ body {
 </nav>
 
 
-<div class="sidenav">
-  <br><br>
-  <a href="/admindashboard">Dashboard</a>
-  <a href="/adminprofile/{{session()->get('email')}}">profile</a>
-  <a href="/adminregistration">Create an Admin</a>
-  <a href="/driverregistration">Create a Driver</a>
-  <a href="/userregistration">Create a User</a>
-  <a href="/busregistration">Create a Bus</a>
 
-</div>
 
 
 
