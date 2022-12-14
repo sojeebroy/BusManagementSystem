@@ -2090,10 +2090,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/AxioPost.jsx":
-/*!**********************************************!*\
-  !*** ./resources/js/components/AxioPost.jsx ***!
-  \**********************************************/
+/***/ "./resources/js/components/DriverPost.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/DriverPost.jsx ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -54573,7 +54573,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_AxioPost__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/AxioPost */ "./resources/js/components/AxioPost.jsx");
+/* harmony import */ var _components_DriverPost__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/DriverPost */ "./resources/js/components/DriverPost.jsx");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while

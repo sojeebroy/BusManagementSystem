@@ -34,12 +34,10 @@ Route::post('/adminregistration', [AdminController::class, 'registration'])->mid
 
 //driver
 
-Route::get('/driverregistration', [DriverController::class, 'view'])->middleware('CheckLogin');
-Route::post('/driverregistration', [DriverController::class, 'registration'])->middleware('CheckLogin');
 Route::get('/alldrivers',[DriverController::class,'AllDrivers'])->middleware('CheckLogin');
 Route::get('/deletedriver/{id}',[DriverController::class,'Delete'])->middleware('CheckLogin');
-Route::get('/reactaxiospost', function () {
-    return view('axiosPost');
+Route::get('/driverregistration', function () {
+    return view('DriverRegistration');
 });
 
 
@@ -55,13 +53,16 @@ Route::get('/deleteuser/{id}',[UserController::class,'Delete'])->middleware('Che
 
 
 //driver
-Route::get('driverregistration', [DriverController::class, 'view'])->middleware('CheckLogin');
-Route::post('driverregistration', [DriverController::class, 'registration'])->middleware('CheckLogin');
+// Route::get('driverregistration', [DriverController::class, 'view'])->middleware('CheckLogin');
+// Route::post('driverregistration', [DriverController::class, 'registration'])->middleware('CheckLogin');
 Route::get('driverprofile/{id}', [DriverController::class, 'profile'])->name('driverprofile')->middleware('CheckLogin');
 Route::get('editdriverprofile/{id}',[DriverController::class,'EditProfile'])->middleware('CheckLogin');
 Route::post('driverprofile/{id}',[DriverController::class,'update'])->middleware('CheckLogin');
 Route::get('logout/{id}',[DriverController::class,'logout']);
 Route::get('home',[DriverController::class,'home']);
+Route::get('/driverregistration', function () {
+    return view('DriverRegistration');
+});
 
 
 //login
