@@ -2138,21 +2138,32 @@ var AxioPost = /*#__PURE__*/function (_Component) {
       e.preventDefault();
       _this.setState();
       console.log(_assertThisInitialized(_this));
-      axios__WEBPACK_IMPORTED_MODULE_2___default().post("http://localhost:8000/api/product/list", _this.state).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("http://127.0.0.1:8000/api/driver/list", _this.state).then(function (response) {
         console.log(response);
       })["catch"](function (error) {
         console.log(error);
       });
     });
     _this.state = {
-      pcd: "",
-      pname: ""
+      name: "",
+      email: "",
+      phone: "",
+      password: "",
+      address: "",
+      nid: ""
     };
     return _this;
   }
   _createClass(AxioPost, [{
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+        name = _this$state.name,
+        email = _this$state.email,
+        phone = _this$state.phone,
+        password = _this$state.password,
+        address = _this$state.address,
+        nid = _this$state.nid;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "vh-150",
@@ -2174,8 +2185,7 @@ var AxioPost = /*#__PURE__*/function (_Component) {
                           className: "text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4",
                           children: "Sign up as a Driver"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-                          action: "reactaxiospost",
-                          method: "POST",
+                          onSubmit: this.submitHandler,
                           className: "mx-1 mx-md-4",
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                             className: "d-flex flex-row align-items-center mb-4",
@@ -2183,13 +2193,13 @@ var AxioPost = /*#__PURE__*/function (_Component) {
                               className: "fas fa-user fa-lg me-3 fa-fw"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                               className: "form-outline flex-fill mb-0",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                                 type: "text",
                                 id: "form3Example1c",
                                 name: "name",
                                 className: "form-control",
-                                value: "",
-                                readOnly: true
+                                value: name,
+                                onChange: this.changeHandler
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                                 className: "form-label",
                                 htmlFor: "form3Example1c",
@@ -2202,13 +2212,13 @@ var AxioPost = /*#__PURE__*/function (_Component) {
                               className: "fas fa-envelope fa-lg me-3 fa-fw"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                               className: "form-outline flex-fill mb-0",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                                 type: "email",
                                 id: "form3Example3c",
                                 name: "email",
                                 className: "form-control",
-                                value: "",
-                                readOnly: true
+                                value: email,
+                                onChange: this.changeHandler
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                                 className: "form-label",
                                 htmlFor: "form3Example3c",
@@ -2221,13 +2231,13 @@ var AxioPost = /*#__PURE__*/function (_Component) {
                               className: "fas fa-lock fa-lg me-3 fa-fw"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                               className: "form-outline flex-fill mb-0",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                                 type: "password",
                                 id: "form3Example4c",
                                 name: "password",
                                 className: "form-control",
-                                value: "",
-                                readOnly: true
+                                value: password,
+                                onChange: this.changeHandler
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                                 className: "form-label",
                                 htmlFor: "form3Example4c",
@@ -2240,13 +2250,13 @@ var AxioPost = /*#__PURE__*/function (_Component) {
                               className: "fas fa-user fa-lg me-3 fa-fw"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                               className: "form-outline flex-fill mb-0",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                                 type: "text",
                                 id: "form3Example1c",
                                 name: "phone",
                                 className: "form-control",
-                                value: "",
-                                readOnly: true
+                                value: phone,
+                                onChange: this.changeHandler
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                                 className: "form-label",
                                 htmlFor: "form3Example1c",
@@ -2259,13 +2269,13 @@ var AxioPost = /*#__PURE__*/function (_Component) {
                               className: "fas fa-user fa-lg me-3 fa-fw"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                               className: "form-outline flex-fill mb-0",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                                 type: "text",
                                 id: "form3Example1c",
                                 name: "nid",
                                 className: "form-control",
-                                value: "",
-                                readOnly: true
+                                value: nid,
+                                onChange: this.changeHandler
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                                 className: "form-label",
                                 htmlFor: "form3Example1c",
@@ -2278,23 +2288,22 @@ var AxioPost = /*#__PURE__*/function (_Component) {
                               className: "fas fa-user fa-lg me-3 fa-fw"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                               className: "form-outline flex-fill mb-0",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                                 type: "text",
                                 id: "form3Example1c",
                                 name: "address",
                                 className: "form-control",
-                                value: "",
-                                readOnly: true
+                                value: address,
+                                onChange: this.changeHandler
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                                 className: "form-label",
                                 htmlFor: "form3Example1c",
                                 children: "Address"
                               })]
                             })]
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                          }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                             type: "submit",
-                            className: "btn btn-primary btn-lg",
-                            children: "Register"
+                            className: "btn btn-primary btn-lg"
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
                             type: "button",
                             className: "btn btn-success btn-lg",

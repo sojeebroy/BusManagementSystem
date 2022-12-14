@@ -6,8 +6,12 @@ class AxioPost extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pcd: "",
-            pname: "",
+            name: "",
+            email: "",
+            phone: "",
+            password: "",
+            address: "",
+            nid: "",
         };
     }
 
@@ -19,7 +23,7 @@ class AxioPost extends Component {
         this.setState();
         console.log(this);
         axios
-            .post("http://localhost:8000/api/product/list", this.state)
+            .post("http://127.0.0.1:8000/api/driver/list", this.state)
             .then((response) => {
                 console.log(response);
             })
@@ -29,6 +33,7 @@ class AxioPost extends Component {
     };
 
     render() {
+        const { name, email, phone, password, address, nid } = this.state;
         return (
             <div>
                 <div className="vh-150">
@@ -48,20 +53,25 @@ class AxioPost extends Component {
                                                 </p>
 
                                                 <form
-                                                    action="reactaxiospost"
-                                                    method="POST"
+                                                    onSubmit={
+                                                        this.submitHandler
+                                                    }
                                                     className="mx-1 mx-md-4"
                                                 >
                                                     <div className="d-flex flex-row align-items-center mb-4">
                                                         <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                         <div className="form-outline flex-fill mb-0">
+                                                            {" "}
                                                             <input
                                                                 type="text"
                                                                 id="form3Example1c"
                                                                 name="name"
                                                                 className="form-control"
-                                                                value=""
-                                                                readOnly
+                                                                value={name}
+                                                                onChange={
+                                                                    this
+                                                                        .changeHandler
+                                                                }
                                                             />
                                                             <label
                                                                 className="form-label"
@@ -74,13 +84,17 @@ class AxioPost extends Component {
                                                     <div className="d-flex flex-row align-items-center mb-4">
                                                         <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                         <div className="form-outline flex-fill mb-0">
+                                                            {" "}
                                                             <input
                                                                 type="email"
                                                                 id="form3Example3c"
                                                                 name="email"
                                                                 className="form-control"
-                                                                value=""
-                                                                readOnly
+                                                                value={email}
+                                                                onChange={
+                                                                    this
+                                                                        .changeHandler
+                                                                }
                                                             />
                                                             <label
                                                                 className="form-label"
@@ -93,13 +107,17 @@ class AxioPost extends Component {
                                                     <div className="d-flex flex-row align-items-center mb-4">
                                                         <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                         <div className="form-outline flex-fill mb-0">
+                                                            {" "}
                                                             <input
                                                                 type="password"
                                                                 id="form3Example4c"
                                                                 name="password"
                                                                 className="form-control"
-                                                                value=""
-                                                                readOnly
+                                                                value={password}
+                                                                onChange={
+                                                                    this
+                                                                        .changeHandler
+                                                                }
                                                             />
                                                             <label
                                                                 className="form-label"
@@ -112,13 +130,17 @@ class AxioPost extends Component {
                                                     <div className="d-flex flex-row align-items-center mb-4">
                                                         <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                         <div className="form-outline flex-fill mb-0">
+                                                            {" "}
                                                             <input
                                                                 type="text"
                                                                 id="form3Example1c"
                                                                 name="phone"
                                                                 className="form-control"
-                                                                value=""
-                                                                readOnly
+                                                                value={phone}
+                                                                onChange={
+                                                                    this
+                                                                        .changeHandler
+                                                                }
                                                             />
                                                             <label
                                                                 className="form-label"
@@ -131,13 +153,17 @@ class AxioPost extends Component {
                                                     <div className="d-flex flex-row align-items-center mb-4">
                                                         <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                         <div className="form-outline flex-fill mb-0">
+                                                            {" "}
                                                             <input
                                                                 type="text"
                                                                 id="form3Example1c"
                                                                 name="nid"
                                                                 className="form-control"
-                                                                value=""
-                                                                readOnly
+                                                                value={nid}
+                                                                onChange={
+                                                                    this
+                                                                        .changeHandler
+                                                                }
                                                             />
                                                             <label
                                                                 className="form-label"
@@ -150,13 +176,17 @@ class AxioPost extends Component {
                                                     <div className="d-flex flex-row align-items-center mb-4">
                                                         <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                         <div className="form-outline flex-fill mb-0">
+                                                            {" "}
                                                             <input
                                                                 type="text"
                                                                 id="form3Example1c"
                                                                 name="address"
                                                                 className="form-control"
-                                                                value=""
-                                                                readOnly
+                                                                value={address}
+                                                                onChange={
+                                                                    this
+                                                                        .changeHandler
+                                                                }
                                                             />
                                                             <label
                                                                 className="form-label"
@@ -165,13 +195,11 @@ class AxioPost extends Component {
                                                                 Address
                                                             </label>
                                                         </div>
-                                                    </div>
-                                                    <button
+                                                    </div>{" "}
+                                                    <input
                                                         type="submit"
                                                         className="btn btn-primary btn-lg"
-                                                    >
-                                                        Register
-                                                    </button>
+                                                    ></input>
                                                     <button
                                                         type="button"
                                                         className="btn btn-success btn-lg"
