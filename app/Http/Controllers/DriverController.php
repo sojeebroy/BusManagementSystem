@@ -93,4 +93,24 @@ class DriverController extends Controller
         return view('home');
     }
 
+    public function DriverListAPI(){
+        return Driver::all();
+    }
+    public function DriverProfileAPI($id){
+        return Driver::find($id);
+    }
+
+    public function DriverRegAPI(Request $request){
+
+        $driver = new Driver();
+        $driver ->name = $request->name;
+        $driver ->email = $request->email;
+        $driver ->password = $request->password;
+        $driver ->phone = $request->phone;
+        $driver ->nid = $request->nid;
+        $driver ->address = $request->address;
+        $driver ->save();
+
+    }
+
 }
