@@ -38,6 +38,9 @@ Route::get('/driverregistration', [DriverController::class, 'view'])->middleware
 Route::post('/driverregistration', [DriverController::class, 'registration'])->middleware('CheckLogin');
 Route::get('/alldrivers',[DriverController::class,'AllDrivers'])->middleware('CheckLogin');
 Route::get('/deletedriver/{id}',[DriverController::class,'Delete'])->middleware('CheckLogin');
+Route::get('/reactaxiospost', function () {
+    return view('axiosPost');
+});
 
 
 
