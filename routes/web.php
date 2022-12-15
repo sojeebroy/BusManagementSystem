@@ -6,6 +6,7 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\MailController;
 
 
 
@@ -55,13 +56,16 @@ Route::get('/deleteuser/{id}',[UserController::class,'Delete'])->middleware('Che
 //driver
 // Route::get('driverregistration', [DriverController::class, 'view'])->middleware('CheckLogin');
 // Route::post('driverregistration', [DriverController::class, 'registration'])->middleware('CheckLogin');
-Route::get('driverprofile/{id}', [DriverController::class, 'profile'])->name('driverprofile')->middleware('CheckLogin');
+// Route::get('driverprofile/{id}', [DriverController::class, 'profile'])->name('driverprofile');
 Route::get('editdriverprofile/{id}',[DriverController::class,'EditProfile'])->middleware('CheckLogin');
 Route::post('driverprofile/{id}',[DriverController::class,'update'])->middleware('CheckLogin');
 Route::get('logout/{id}',[DriverController::class,'logout']);
 Route::get('home',[DriverController::class,'home']);
 Route::get('/driverregistration', function () {
     return view('DriverRegistration');
+});
+Route::get('driverprofile/{id}', function () {
+    return view('DriverProfile');
 });
 
 
@@ -79,3 +83,8 @@ Route::get('/allbuses',[BusController::class,'AllBuses']);
 Route::get('/editbus/{id}',[BusController::class,'EditBus'])->name('editbus');
 Route::post('/editbus/{id}',[BusController::class,'update'])->name('editbus');
 Route::get('/deletebus/{id}',[BusController::class,'Delete']);
+
+
+//mail
+Route::get('/sendemail', [MailController::class,'index']);
+Route::post('/sendemail/send',[MailController::class,'send']);
